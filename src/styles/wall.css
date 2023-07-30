@@ -1,0 +1,484 @@
+.wallContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ///BACKGROUND/// */
+
+.backgroundContainerWall{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.backgroundWall{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    background: no-repeat center 0/cover;
+    animation: backgroundEffec 18s linear infinite;
+    
+}
+
+.background_1{
+    background-image:url(../assets/wallAssets/Wallpaper1.jpg);
+    animation-delay: 0s;
+}
+
+.background_2{
+    background-image:url(..//assets/wallAssets/Wallpaper2.jpg);
+    animation-delay: 6s;
+}
+
+.background_3{
+    background-image:url(../assets/wallAssets/Wallpaper3.jpg);
+    animation-delay: 12s;
+}
+
+@keyframes backgroundEffec {
+
+    0% {
+    transform: scale(1);
+    z-index: 2;
+    opacity: 1;
+}
+33% {
+    z-index: 3;
+    opacity: 1;
+}
+38% {
+    z-index: 4;
+}
+40% {
+    opacity: 0;
+    transform: scale(1.1);
+}
+50% {
+    z-index: 1;
+}
+100% {
+    transform: scale(1);
+    z-index: 1;
+    opacity: 0;
+}
+}
+
+
+.userPhoto{
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.userPhoto:hover{
+    opacity: 1;
+    filter: brightness(1.5);
+}
+.menuLogOut{
+    position: absolute;
+    top: 100%;
+    background-color: black;
+    width: 180px;
+    height: 0px;
+    max-height: 100px;
+    overflow: hidden;
+    transition: height 0.3s ease; 
+    border-radius: 5px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    align-items: center;
+}
+
+.userIconContainer:hover .menuLogOut{
+     height: 100px;
+}
+.logOutButton{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: #F1D600;
+    color: black;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.1s;
+    opacity: 0.5;
+}
+.logOutButton:hover{
+    opacity: 1;
+
+}
+
+  .footerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 90%); 
+    position: absolute;
+    bottom: 0;
+    z-index: 5; 
+  }
+  .footerContainer p {
+    color: white;
+    font-family: 'karla', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    text-align: center;
+}
+  .footerContainer p a {
+    color: skyblue;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+/* //////////PublicCONTAINER// */
+
+.publicAllContainer{
+    position: absolute;
+    z-index: 5;
+    top: 200px;
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 5%, rgba(0,0,0,0.66) 25%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6577733144038865) 70%, rgba(0,0,0,0) 90%);
+}
+
+.createPostContainer{
+
+    width: 35vw;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    position: relative;  
+    margin-left: 30px;
+    min-width: 250px;
+}
+
+.dataCreatePostContainer{
+    margin-top: 10%;
+    width: auto;
+    min-width: 250px;
+}
+
+.dataCreatePost{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+}
+.dataCreatePost h2{
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+}
+
+.dataCreatePost img{
+    width: 80px;
+    border-radius: 50%;
+}
+
+.dataCreatePostContainer button{
+    width: 90%;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #3A3B3C;
+}
+
+.dataCreatePostContainer button:hover{
+    background-color: #4E4F51;
+}
+
+
+.modalCreatePostContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s linear; 
+}
+
+.modalHeight{
+    height: 220px;
+}
+
+.modalCreatePostContainer h2 {
+    font-weight: 300;
+    color: white;
+    margin-top: 10px;
+}
+
+.modalCreatePostContainer textarea{
+    width: 90%;
+    height: 50%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 5px;
+    font-family: 'karla';
+}
+
+.modalCreatePostContainer textarea::placeholder{
+    font-style: italic;
+}
+
+.modalCreatePostContainer button {
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    width: 50%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3A3B3C;
+    cursor: pointer;
+    color: white;
+    transition: 0.1s;
+}
+
+.modalCreatePostContainer button:hover{
+    background-color: #4E4F51;
+}
+
+/* ////POSTS CONTAINER/// */
+
+.postsContainer {
+    width: 60vw;
+    min-width: 250px;
+    height: 65vh;
+    
+    border-radius: 10px; 
+    overflow: auto; 
+    padding-left: 20px;
+
+}
+
+/* Estilos para la barra de desplazamiento */
+.postsContainer::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  /* Estilos para el pulgar de la barra de desplazamiento */
+  .postsContainer::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del pulgar */
+    border-radius: 5px; /* Radio de borde del pulgar */
+  }
+  
+  /* Estilos para el fondo de la barra de desplazamiento */
+  .postsContainer::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color del fondo */
+  }
+
+
+.postContainer{
+    background-color: #242526;
+    margin: 15px 15px;
+    border-radius: 10px;
+    min-width: 230px;
+}
+.divContainerUser {
+    width: 100%;
+    height: 60px;
+    padding: 0px 20px 0px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    position: relative;
+}
+.imgProfile3 {
+    height: 4vh;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+.nameUser {
+    font-family: 'karla', sans-serif;
+    color: red;
+    font-size: 15px; 
+}
+
+
+.postIconOptions {
+    height: 3vh;
+    cursor: pointer;
+}
+
+.postIconOptions:hover {
+    background-color: #3a3b3d;
+    border-radius: 50px;
+}
+.postMenuOptions{
+    background-color: #242526;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    right: 48px;
+    bottom: -40px;
+    visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #18191a;
+    padding: 5px 5px;
+}
+
+.postMenuOptions div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    cursor: pointer;
+    
+}
+.postMenuOptions div:hover{
+    background-color: #3a3b3d;
+    border-radius: 5px;
+}
+.postMenuOptions img{
+    height:2vh ;
+}
+
+.postMenuOptions a{
+    color: whitesmoke;
+    font-size: 15px; 
+    font-family: 'karla', sans-serif;
+}
+
+.buttonDelete{
+    z-index: 1;
+
+}
+.postUser {
+    font-size: 15px;
+    text-align: start;
+    padding: 20px;
+    color: white;
+    font-family: 'karla', sans-serif;
+}
+
+.ContainerDetailsPadre{
+    width: 100%;
+    height: 40px;
+    min-width: 230px;
+    display: flex;
+    justify-content: center;
+}
+
+.containerDetails {  
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #414243;
+   
+}
+.number {
+    font-size: 15px;
+    color: white;
+    font-family: 'karla', sans-serif;
+    margin-right: 3px;
+}
+.iconHeart {
+    height: 2vh;
+    margin-right: 5px;
+}
+.iLike {
+    font-size: 13px;
+    color: white;
+    font-family: 'karla', sans-serif;
+    margin-right: 8%;
+    cursor: pointer;
+    padding: 5px;
+}
+.iLike:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+    background-color:#3a3b3d;
+    border-radius: 5px;
+}
+
+.iconComment {
+    height: 2vh;
+    margin-right: 5px;
+}
+.comment {
+    font-size: 13px;
+    color: white;
+    font-family: 'karla', sans-serif;
+    margin-right: 8%;
+}
+.iconShare {
+    height: 2vh;
+    margin-right: 5px;
+}
+.share {
+    font-size: 13px;
+    color: white;
+    font-family: 'karla', sans-serif;
+}
+
+.active {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .nameUser , .postMenuOptions a ,.postUser{
+        font-size: 12px;
+    }
+     .number, .iLike ,.comment,.share{
+        font-size: 10px;
+    }
+
+    .publicAllContainer{
+        flex-direction: column;
+        top: 106px;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 2%, rgba(0,0,0,0.66) 10%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6577733144038865) 80%, rgba(0,0,0,0) 95%);
+    }
+
+
+    .dataCreatePostContainer button{
+        width: 90%;
+
+    }
+    .dataCreatePost img{
+        width: 30px;
+        border-radius: 10px;
+    }
+    .dataCreatePost h2{
+        font-size: 12px;
+    }
+
+    .menuLogOut{
+        display: flex;
+        margin-right: 100px;
+        top: 90%;
+    }
+    .userIconContainer:hover .menuLogOut{
+        height: 50px;
+   }
+   .logOutButton{
+    width: 60%;
+   }
+
+   .postsContainer, .createPostContainer{
+    margin: 0 auto;
+    border-radius: 0px;
+   }
+   .modalCreatePostContainer {
+    background-color: #242526;
+    z-index: 3;
+    border-radius: 5px;
+   }
+  .iconsContainer{
+    margin: 0;
+  }
+}

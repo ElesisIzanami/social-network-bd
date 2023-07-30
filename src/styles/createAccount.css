@@ -1,0 +1,103 @@
+.createAccountContainer{
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/createAccountAssets/WallpaperCreateAcc.jpg');
+    background-size: cover;
+}
+
+.homeIcon{
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.8;
+    filter: invert(100%);
+}
+.homeIcon:hover{
+    opacity: 1;
+}
+
+.createContainer{
+    height: 60vh;
+    width: 30vw;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5681374600621498) 70%, rgba(0,0,0,0) 98%);
+    justify-self: center;
+    position: absolute;
+    top: calc(50% - 30vh);
+    left: calc(50% - 15vw);;
+    border-radius: 10px;
+    min-width: 250px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-family: 'karla';
+    position: relative;
+    font-size: 14px;
+}
+
+.createContainer img {
+    position: absolute; 
+    height: 60vh;
+    right: -25vh; 
+}
+
+.dataCreateContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    z-index: 1;
+    font-weight: 500;
+}
+
+.dataCreateContainer h2 {
+    margin-bottom: 40px;
+    padding-top: 0;
+    margin-top: 0;
+}
+.dataCreateContainer input{
+width: 90%;
+margin: 0 auto;
+height: 30px;
+border-radius: 10px;
+border: none;
+padding-left: 5px;
+margin-bottom: 5px;
+
+}
+
+.dataCreateContainer input:focus {
+    outline: none;
+  }
+
+.createContainer button{
+    width: 50%;
+    height: 8%;
+    border-radius: 5px;
+    z-index: 1;
+    color: white;
+    background-color: #242526;
+    box-shadow: 0px 0px 4px 1px #18191a;
+    cursor: pointer;
+}
+
+.createContainer button:hover{
+    background-color: #3a3b3d;
+}
+
+@media screen and (max-width: 800px){
+
+    .createContainer{
+    
+    left: 1vw
+    }
+}
+
+@media screen and (max-width: 500px){
+    .createContainer img {
+        display: none;
+    }
+    .dataCreateContainer input{
+        font-size: 12px;
+        }
+}
