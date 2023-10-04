@@ -129,36 +129,35 @@ export const registerUser = (navigateTo,email,password,confirmPassword) => {
 
 
 // ---------- Inicio de sesión con Email y Contraseña ----------
-export const loginEmailPassword = (navigateTo,emailLogin,passwordLogin) => {
-   /* const signinForm = document.getElementById('signIn-form');
-   const emailLogin = signinForm['inputEmail'].value;
-   const passwordLogin = signinForm['inputPassword'].value; */
-   console.log('Iniciando Sesion con correo y password');
+export const loginEmailPassword = (navigateTo) => {
+  
+   const emailLogin = document.getElementById('inputEmail').value;
+   const passwordLogin = document.getElementById('inputPassword').value;
 
  
-signInWithEmailAndPassword(auth, emailLogin, passwordLogin)
-.then((userCredential) => {
-   // Inicio de sesión exitoso, puedes obtener el usuario y realizar acciones adicionales
-   const user = userCredential.user;
+   signInWithEmailAndPassword(auth, emailLogin, passwordLogin)
+   .then((userCredential) => {
+      // Inicio de sesión exitoso, puedes obtener el usuario y realizar acciones adicionales
+      const user = userCredential.user;
 
-   navigateTo('/wall')
+      navigateTo('/wall')
 
-   console.log('Inicio de sesión exitoso:', user);
-})
-.catch((error) => {
-   // Ocurrió un error durante el inicio de sesión
-   const errorCode = error.code;
-   const errorMessage = error.message;
-   const noteEyP = document.getElementById('msg_Email');
-   console.error('Error de inicio de sesión:', errorCode, errorMessage);
-   if (errorCode === 'auth/user-not-found') {
-      noteEyP.innerHTML = 'Usuario no registrado'
-      //alert('usuario no registrado');
-   } else if (errorCode === 'auth/wrong-password') {
-      noteEyP.innerHTML = 'Contraseña incorrecta'
-      //alert('Contraseña incorrecta');
-   }
-});
+      console.log('Inicio de sesión exitoso:', user);
+   })
+   .catch((error) => {
+      // Ocurrió un error durante el inicio de sesión
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const noteEyP = document.getElementById('msg_Email');
+      console.error('Error de inicio de sesión:', errorCode, errorMessage);
+      if (errorCode === 'auth/user-not-found') {
+         noteEyP.innerHTML = 'Usuario no registrado'
+         alert('usuario no registrado');
+      } else if (errorCode === 'auth/wrong-password') {
+         noteEyP.innerHTML = 'Contraseña incorrecta'
+         alert('Contraseña incorrecta');
+      }
+   }); 
 }
 
 

@@ -292,7 +292,9 @@ function login(navegando){
     modalLogin.classList.add('modalLogin');
     modalLoginForm.classList.add('modalLoginForm');
     userLoginContainer.classList.add('userLoginContainer');
+    inputUserLogin.classList.add('inputUserLogin');
     passwordLoginContainer.classList.add('passwordLoginContainer');
+    inputPasswordLogin.classList.add('inputPasswordLogin');
     buttonSignIn.classList.add('buttonSignIn');
     backgroundModalLogin.classList.add('backgroundModalLogin');
     ForgoutPassContainer.classList.add('ForgoutPassContainer');
@@ -306,7 +308,10 @@ function login(navegando){
     googleIcon.setAttribute('src', '../assets/loginAssets/googleIcon.png');
     twitterIcon.setAttribute('src', '../assets/loginAssets/twiterIcon.png');
     inputUserLogin.setAttribute('placeholder', 'email');
+    inputUserLogin.setAttribute('id', 'inputEmail');
     inputPasswordLogin.setAttribute('placeholder', 'password');
+    inputPasswordLogin.setAttribute('id', 'inputPassword');
+    modalLoginForm.setAttribute('id', 'modalLoginForm')
 
 
     spanIconUser.append(iconUserLogin);
@@ -315,13 +320,13 @@ function login(navegando){
     passwordLoginContainer.append(spanIconPassword,inputPasswordLogin);
     modalLoginForm.append(titleLogin,userLoginContainer,passwordLoginContainer,buttonSignIn,ForgoutPassContainer);
     ForgoutPassContainer.append(linkForgoutPass)
-    appsIconContainer.append(facebookIcon,googleIcon,twitterIcon)
+    appsIconContainer.append(googleIcon)
     appsContainer.append(titleIconContainer,appsIconContainer)
     modalLogin.append(modalLoginForm,backgroundModalLogin,appsContainer)
 
 
     
-    //Append Elementos
+    //Append Elementos Nav
     aliNav1.append(aSpan1);
     aliNav2.append(aSpan2);
     aliNav3.append(aSpan3);
@@ -413,7 +418,7 @@ function login(navegando){
     })
 
     //evento para desaparecer el modalLogin 
-     document.addEventListener('click', (event) => {
+     document.addEventListener('submit', (event) => {
         const targetElement = event.target;
     
         // Si el clic ocurre fuera del modal, ocultarlo
@@ -423,14 +428,18 @@ function login(navegando){
     });
 
     //evento del boton SignIn para entrar con correo y contraseña
-    buttonSignIn.addEventListener('click',(e)=>{
+    modalLoginForm.addEventListener('submit',(e)=>{
         e.preventDefault()
-
+       /*  const email =  document.querySelector('.inputUserLogin').value;
+        const password =  document.querySelector('.inputPasswordLogin').value; */
         console.log("RUMBO A WALL ...")
-        loginEmailPassword(navegando,inputUserLogin.value,inputPasswordLogin.value);
+      /*   console.log("input name:",email )
+        console.log("input password:",password )  */
+
+        loginEmailPassword(navegando);
 
         userDataGoogle(inputUserLogin.value.split('@')[0],"","","")
-        console.log("NOMBRE CORTADO",inputUserLogin.value.split('@')[0])
+        console.log("NOMBRE CORTADO",inputUserLogin.value.split('@')[0]) 
     })
 
 
@@ -438,8 +447,6 @@ function login(navegando){
     googleIcon.addEventListener('click',()=>{
             LoginWithGoogle(navegando)      
     })
-
-
 
     return containerLogin;
 }

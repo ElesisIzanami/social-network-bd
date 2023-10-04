@@ -154,18 +154,16 @@ import {onGetUserData,deleteUser,savePost,updatePost,getPost,deletePost,onGetPos
         userName=data.name;
         userPhoto=data.photo;
         
-        if(userPhoto){
-            userPhotoPublic.setAttribute('src', userPhoto);
-            userIcon.setAttribute('src', userPhoto);
-        }else{
-            userPhotoPublic.setAttribute('src', '../assets/wallAssets/user-default.png');
-            userIcon.setAttribute('src', '../assets/wallAssets/user-default.png');
-        }
+            if(userPhoto){
+                userPhotoPublic.setAttribute('src', userPhoto);
+                userIcon.setAttribute('src', userPhoto);
+            }else{
+                userPhotoPublic.setAttribute('src', '../assets/wallAssets/user-default.png');
+                userIcon.setAttribute('src', '../assets/wallAssets/user-default.png');
+            }
         
-        
-
         userDataName.textContent=userName;
-    })
+        })
     })
 
      //evento del boton logOut
@@ -209,7 +207,7 @@ onGetPosts((responsePosts)=>{
           html += 
           `<div class="postContainer">
                 <div class="divContainerUser" id="divContenedorxD">
-                        <img class="imgProfile3" src="${post.imageUser}" alt="Scissors and comb profile icon">
+                        <img class="imgProfile3" src="${post.imageUser}" alt="iconProfile">
                         <h2 class="nameUser">${post.nameUser}</h2>
                         <img class="postIconOptions"  src="../assets/wallAssets/icon-three-dots.png" alt="Ellipsis icon">
                         <div class="postMenuOptions">
@@ -319,9 +317,7 @@ onGetPosts((responsePosts)=>{
                 }                       
             })
         })
-    })
-    
-    
+    }) 
 });    
 
 

@@ -467,6 +467,7 @@
 
 .appsIconContainer img{
     width: 10%;
+    min-width: 30px;
     margin-left: 5%;
     margin: 0;
     cursor: pointer;
@@ -649,9 +650,17 @@
     margin-left: 0;
 }
 
- .backgroundModalLogin{
+/*  .backgroundModalLogin{
     display: none;
-}
+} */
+@keyframes slideIn {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 25%;
+    }
+  }
 
 .menuLogin{
     margin-right:160% ;
